@@ -1,0 +1,103 @@
+{
+  "persona_count": 5,
+  "mode": "service_reaction_simulation",
+  "comparison_enabled": false,
+  "generated_question_count": 7,
+  "service_condition": "이 서비스는 사용자가 특정 업무를 더 쉽게 처리할 수 있도록 도와주는 가상의 AI 도구입니다. 이 예시는 실제 사업 아이디어가 아니라 설정 파일 구조를 설명하기 위한 더미 데이터입니다.",
+  "decision_context": {
+    "goal": "가상 서비스에 대한 사용자 반응 확인",
+    "decision_type": "서비스 사용 의향 및 신뢰도 검증",
+    "example_options": [
+      {
+        "id": "A",
+        "name": "예시 입력 A",
+        "description": "서비스가 처리할 수 있는 임의의 예시 입력입니다."
+      },
+      {
+        "id": "B",
+        "name": "예시 입력 B",
+        "description": "서비스 사용 상황을 설명하기 위한 임의의 예시 입력입니다."
+      }
+    ]
+  },
+  "seed_rules": {
+    "target_condition": "[직업]\n- 사무직 / 프리랜서 / 소규모 팀 리더\n\n[현재 상태]\n- 반복 업무가 많고 시간을 줄이고 싶어함\n\n[행동 특성]\n- 새로운 도구에 관심은 있지만 도입 전 검증을 중요하게 생각함\n- 가격과 사용 편의성을 함께 고려함\n\n[핵심 문제]\n- 업무 시간 부족\n- 도구 신뢰 부족\n- 실제 효용에 대한 확신 부족",
+    "age_range": "25-55",
+    "jobs": [
+      "사무직",
+      "프리랜서",
+      "소규모 팀 리더",
+      "개인 사업자",
+      "프로젝트 매니저"
+    ],
+    "personalities": [
+      "실용적",
+      "회의적",
+      "보수적",
+      "호기심 많음",
+      "가격 민감형"
+    ],
+    "situations": [
+      "반복 업무를 줄이고 싶지만 새 도구 도입에는 신중함",
+      "업무 효율화 도구를 몇 번 써봤지만 오래 정착하지 못함",
+      "간단하고 바로 효과가 보이는 기능을 선호함",
+      "AI 도구의 결과를 그대로 믿기보다는 근거를 확인하고 싶어함"
+    ],
+    "must_include_constraints": [
+      "시간 부족",
+      "예산 민감성",
+      "학습 부담",
+      "AI 결과에 대한 신뢰 문제",
+      "기존 업무 흐름과의 충돌"
+    ]
+  },
+  "agent_roles": {
+    "persona_agents": {
+      "role": "가상 타겟 사용자",
+      "task": "서비스를 사용해본 뒤 느낀 가치, 우려, 신뢰, 재사용 가능성, 구매 가능성을 현실적으로 평가합니다."
+    },
+    "strategy_agent": {
+      "role": "전략 분석가",
+      "task": "서비스가 타겟 사용자의 현재 상황과 잘 맞는지 해석합니다."
+    },
+    "evaluation_agent": {
+      "role": "시장 반응 평가자",
+      "task": "페르소나 반응, 신뢰 장벽, 구매 트리거, 시장 적합도를 종합합니다."
+    }
+  },
+  "scoring_schema": {
+    "persona_reaction_score": "1-100",
+    "strategic_fit_score": "1-100",
+    "execution_feasibility_score": "1-100",
+    "revenue_contribution_score": "1-100",
+    "final_action_value_score_formula": "0.3 * persona_reaction_score + 0.3 * strategic_fit_score + 0.2 * execution_feasibility_score + 0.2 * revenue_contribution_score"
+  },
+  "questions": [],
+  "output_requirements": {
+    "include_persona_opinions": true,
+    "include_sentiment": true,
+    "sentiment_labels": [
+      "긍정",
+      "부정",
+      "중립"
+    ],
+    "include_option_comparison": false,
+    "include_strategy_agent_review": false,
+    "include_scores": true,
+    "include_alignment_analysis": true,
+    "include_counter_insight": true,
+    "include_decision_guidance": true,
+    "include_final_summary": true,
+    "report_format": "html"
+  },
+  "persona_blueprints": [
+    {
+      "job": "",
+      "age": "",
+      "personality": "",
+      "current_situation": "",
+      "main_problem": "",
+      "extra_notes": ""
+    }
+  ]
+}
