@@ -1,76 +1,106 @@
 {
   "persona_count": 5,
+  "preset": [
+    "idea_validation"
+  ],
   "mode": "service_reaction_simulation",
   "comparison_enabled": false,
   "generated_question_count": 7,
-  "service_condition": "이 서비스는 사용자가 특정 업무를 더 쉽게 처리할 수 있도록 도와주는 가상의 AI 도구입니다. 이 예시는 실제 사업 아이디어가 아니라 설정 파일 구조를 설명하기 위한 더미 데이터입니다.",
+  "service_condition": "이 파일은 설정 구조를 설명하기 위한 공개용 더미 데이터입니다. 예시 서비스는 사용자가 흩어진 메모를 정리하고 필요한 내용을 쉽게 다시 찾을 수 있도록 돕는 가상의 AI 보조 도구입니다. 실제 프로젝트 정보나 비공개 기획 내용을 포함하지 않습니다.",
   "decision_context": {
-    "goal": "가상 서비스에 대한 사용자 반응 확인",
-    "decision_type": "서비스 사용 의향 및 신뢰도 검증",
+    "goal": "가상 도구에 대한 사용자 반응과 사용 의향을 확인합니다.",
+    "decision_type": "가상 서비스 아이디어 반응 확인",
     "example_options": [
       {
         "id": "A",
-        "name": "예시 입력 A",
-        "description": "서비스가 처리할 수 있는 임의의 예시 입력입니다."
+        "name": "예시 기능 A",
+        "description": "메모를 주제별로 자동 분류하는 더미 기능 예시입니다.",
+        "analysis_object": {
+          "target_customer": "",
+          "value_proposition": "",
+          "pricing": "",
+          "time_to_revenue": ""
+        }
       },
       {
         "id": "B",
-        "name": "예시 입력 B",
-        "description": "서비스 사용 상황을 설명하기 위한 임의의 예시 입력입니다."
+        "name": "예시 기능 B",
+        "description": "긴 메모에서 핵심 문장을 요약하는 더미 기능 예시입니다.",
+        "analysis_object": {
+          "target_customer": "",
+          "value_proposition": "",
+          "pricing": "",
+          "time_to_revenue": ""
+        }
       }
+    ],
+    "analysis_object_required": false,
+    "analysis_object_fields": [
+      "target_customer",
+      "value_proposition",
+      "pricing",
+      "time_to_revenue"
     ]
   },
   "seed_rules": {
-    "target_condition": "[직업]\n- 사무직 / 프리랜서 / 소규모 팀 리더\n\n[현재 상태]\n- 반복 업무가 많고 시간을 줄이고 싶어함\n\n[행동 특성]\n- 새로운 도구에 관심은 있지만 도입 전 검증을 중요하게 생각함\n- 가격과 사용 편의성을 함께 고려함\n\n[핵심 문제]\n- 업무 시간 부족\n- 도구 신뢰 부족\n- 실제 효용에 대한 확신 부족",
+    "target_condition": "[사용자 유형]\n- 개인 메모나 업무 기록을 자주 남기는 일반 사용자\n\n[현재 상태]\n- 기록은 많지만 다시 찾기 어려움\n- 정리 방식이 일정하지 않음\n- 간단한 보조 도구에는 관심이 있음\n\n[행동 특성]\n- 복잡한 설정을 부담스러워함\n- 빠르게 이해되는 결과를 선호함\n- AI가 만든 결과는 직접 확인하고 수정하고 싶어함\n\n[핵심 문제]\n- 기록 검색 불편\n- 정리 습관 부족\n- 도구 사용 지속성 부족\n- 결과 신뢰 확인 필요",
     "age_range": "25-55",
     "jobs": [
       "사무직",
-      "프리랜서",
-      "소규모 팀 리더",
-      "개인 사업자",
-      "프로젝트 매니저"
+      "학생",
+      "연구원",
+      "프로젝트 매니저",
+      "콘텐츠 작성자"
     ],
     "personalities": [
       "실용적",
       "회의적",
-      "보수적",
       "호기심 많음",
-      "가격 민감형"
+      "신중함",
+      "간편함 선호"
     ],
     "situations": [
-      "반복 업무를 줄이고 싶지만 새 도구 도입에는 신중함",
-      "업무 효율화 도구를 몇 번 써봤지만 오래 정착하지 못함",
-      "간단하고 바로 효과가 보이는 기능을 선호함",
-      "AI 도구의 결과를 그대로 믿기보다는 근거를 확인하고 싶어함"
+      "메모는 자주 하지만 정리하지 못해 다시 찾는 데 시간이 걸림",
+      "새로운 도구를 써봤지만 복잡하면 오래 사용하지 않음",
+      "AI가 정리한 결과를 그대로 믿기보다는 직접 확인하고 싶어함",
+      "짧은 시간 안에 도움을 받을 수 있으면 다시 사용할 가능성이 있음"
     ],
     "must_include_constraints": [
       "시간 부족",
-      "예산 민감성",
-      "학습 부담",
-      "AI 결과에 대한 신뢰 문제",
-      "기존 업무 흐름과의 충돌"
+      "설정 부담",
+      "결과 확인 필요",
+      "기존 습관과의 충돌",
+      "반복 사용 동기 부족"
     ]
   },
   "agent_roles": {
-    "persona_agents": {
-      "role": "가상 타겟 사용자",
-      "task": "서비스를 사용해본 뒤 느낀 가치, 우려, 신뢰, 재사용 가능성, 구매 가능성을 현실적으로 평가합니다."
+    "persona_agent": {
+      "role": "가상 사용자",
+      "task": "가상의 메모 정리 도구를 사용해본 뒤 느낀 편의성, 우려, 신뢰도, 재사용 가능성을 현실적으로 평가합니다."
     },
     "strategy_agent": {
-      "role": "전략 분석가",
-      "task": "서비스가 타겟 사용자의 현재 상황과 잘 맞는지 해석합니다."
+      "role": "서비스 분석가",
+      "task": "가상 도구가 사용자의 기록 정리 문제와 얼마나 잘 맞는지 해석합니다."
     },
     "evaluation_agent": {
-      "role": "시장 반응 평가자",
-      "task": "페르소나 반응, 신뢰 장벽, 구매 트리거, 시장 적합도를 종합합니다."
+      "role": "반응 평가자",
+      "task": "페르소나 반응, 사용 장벽, 사용 계기, 전반적 적합도를 종합합니다."
+    },
+    "execution_planner_agent": {
+      "role": "작업 분해 도우미",
+      "task": "검토된 방향을 작은 작업 단위로 나누고, 각 작업의 Input-Process-Output 구조를 정리합니다."
+    },
+    "learning_agent": {
+      "role": "개선점 분석가",
+      "task": "예상 반응과 실제 반응의 차이를 정리하고 다음 개선 방향을 제안합니다."
     }
   },
   "scoring_schema": {
     "persona_reaction_score": "1-100",
     "strategic_fit_score": "1-100",
     "execution_feasibility_score": "1-100",
-    "revenue_contribution_score": "1-100",
-    "final_action_value_score_formula": "0.3 * persona_reaction_score + 0.3 * strategic_fit_score + 0.2 * execution_feasibility_score + 0.2 * revenue_contribution_score"
+    "outcome_contribution_score": "1-100",
+    "final_action_value_score_formula": "0.3 * persona_reaction_score + 0.3 * strategic_fit_score + 0.2 * execution_feasibility_score + 0.2 * outcome_contribution_score"
   },
   "questions": [],
   "output_requirements": {
@@ -81,12 +111,16 @@
       "부정",
       "중립"
     ],
+    "include_analysis_object": true,
+    "include_assumption_validation": true,
+    "include_learning_feedback": true,
     "include_option_comparison": false,
-    "include_strategy_agent_review": false,
+    "include_strategy_agent_review": true,
     "include_scores": true,
     "include_alignment_analysis": true,
     "include_counter_insight": true,
     "include_decision_guidance": true,
+    "include_execution_plan": true,
     "include_final_summary": true,
     "report_format": "html"
   },
