@@ -240,6 +240,7 @@ def render_html_report(
       {render_optional_panel("정렬성 분석", summary.get("alignment_analysis", ""), output_requirements.get("include_alignment_analysis", False))}
       {render_optional_panel("반대 인사이트", summary.get("counter_insight", ""), output_requirements.get("include_counter_insight", False))}
       {render_optional_panel("의사결정 가이드", summary.get("decision_guidance", ""), output_requirements.get("include_decision_guidance", False))}
+      {render_optional_panel("전략 에이전트 리뷰", summary.get("strategy_agent_review", ""), output_requirements.get("include_strategy_agent_review", False))}
       <div class="panel">
         <h3>가장 큰 실패 요인</h3>
         <p>{escape(str(summary.get("biggest_failure_factor", "")))}</p>
@@ -382,6 +383,7 @@ def render_markdown_report(
         *markdown_optional_section("### 정렬성 분석", summary.get("alignment_analysis", ""), output_requirements.get("include_alignment_analysis", False)),
         *markdown_optional_section("### 반대 인사이트", summary.get("counter_insight", ""), output_requirements.get("include_counter_insight", False)),
         *markdown_optional_section("### 의사결정 가이드", summary.get("decision_guidance", ""), output_requirements.get("include_decision_guidance", False)),
+        *markdown_optional_section("### 전략 에이전트 리뷰", summary.get("strategy_agent_review", ""), output_requirements.get("include_strategy_agent_review", False)),
         "### 가장 큰 실패 요인",
         str(summary.get("biggest_failure_factor", "")),
         "",

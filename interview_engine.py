@@ -45,6 +45,9 @@ Seed rules:
 Decision context:
 {persona_config.get("decision_context", {})}
 
+Agent roles:
+{persona_config.get("agent_roles", {})}
+
 Important interpretation:
 - decision_context.example_options are only sample user inputs/actions that the service can analyze.
 - Do not make the interview about choosing those examples.
@@ -113,6 +116,9 @@ Service condition:
 Decision context:
 {persona_config.get("decision_context", {})}
 
+Agent roles:
+{persona_config.get("agent_roles", {})}
+
 Important interpretation:
 - example_options are sample actions the service analyzes during usage.
 - The persona is evaluating the service experience itself, not the example options as products.
@@ -142,6 +148,7 @@ Rules:
 - Use the persona's job, age, personality, situation, and problem.
 - Sentiment must be exactly one of: 긍정, 부정, 중립.
 - feasibility_score means likelihood that this persona would use the service in their real workflow, from 1 to 10.
+- Use agent_roles.persona_agents as guidance for the persona's evaluation responsibility.
 - Be candid. Include objections when the persona would object.
 """.strip()
 

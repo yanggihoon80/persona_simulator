@@ -149,6 +149,9 @@ Copy-Item .\persona_config.example.json .\persona_config.json
 `output_requirements`
 : 리포트에 포함할 분석 섹션을 제어합니다.
 
+`agent_roles`
+: AI가 각 단계에서 어떤 관점으로 판단할지 안내합니다. `persona_agents`는 페르소나 인터뷰의 평가 책임, `strategy_agent`는 전략 리뷰, `evaluation_agent`는 종합 평가 관점에 반영됩니다.
+
 ## 실행 흐름
 
 1. `persona_config.json` 로드

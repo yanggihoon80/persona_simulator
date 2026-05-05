@@ -31,6 +31,9 @@ Service description:
 Decision context:
 {persona_config.get("decision_context", {})}
 
+Agent roles:
+{persona_config.get("agent_roles", {})}
+
 Output requirements:
 {persona_config.get("output_requirements", {})}
 
@@ -59,6 +62,7 @@ Required JSON shape:
   "alignment_analysis": "whether the service aligns with the target user's real situation and direction",
   "counter_insight": "important opposing insight or uncomfortable truth",
   "decision_guidance": "practical guidance for what the user should decide next",
+  "strategy_agent_review": "strategic review based on agent_roles.strategy_agent or empty string",
   "one_line_conclusion": "one sentence conclusion"
 }}
 
@@ -67,6 +71,7 @@ Rules:
 - Focus on repeated patterns across personas.
 - Include emotional reactions and practical objections.
 - If output_requirements include alignment/counter/decision guidance, fill those fields with concrete Korean analysis.
+- If output_requirements.include_strategy_agent_review is true, write strategy_agent_review using agent_roles.strategy_agent.
 - Do not recommend or rank decision_context.example_options.
 - market_fit_score must be 1 to 100.
 - Keep each bullet concise but specific.
@@ -102,6 +107,7 @@ def normalize_summary(data: dict[str, Any], average_feasibility: float) -> dict[
         "alignment_analysis": str(data.get("alignment_analysis", "")),
         "counter_insight": str(data.get("counter_insight", "")),
         "decision_guidance": str(data.get("decision_guidance", "")),
+        "strategy_agent_review": str(data.get("strategy_agent_review", "")),
         "one_line_conclusion": str(data.get("one_line_conclusion", "")),
     }
 

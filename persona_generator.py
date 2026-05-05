@@ -25,6 +25,9 @@ Service description:
 Decision context:
 {persona_config.get("decision_context", {})}
 
+Agent roles:
+{persona_config.get("agent_roles", {})}
+
 Mode:
 {persona_config.get("mode", "")}
 

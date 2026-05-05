@@ -207,6 +207,9 @@ def save_condition(
 ## 의사결정 컨텍스트
 {persona_config.get("decision_context", {})}
 
+## 에이전트 역할
+{persona_config.get("agent_roles", {})}
+
 ## 점수 체계
 {persona_config.get("scoring_schema", {})}
 
